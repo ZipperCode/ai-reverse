@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "frida": {
+      "command": "frida-mcp"
+    },
+    "jadx": {
+      "command": "python3",
+      "args": ["__JADX_MCP_PATH__/jadx_mcp_server.py"]
+    },
+    "apktool": {
+      "command": "uv",
+      "args": ["--directory", "__APKTOOL_MCP_PATH__", "run", "apktool_mcp_server.py"]
+    }
+  }
+}

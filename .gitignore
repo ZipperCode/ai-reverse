@@ -1,0 +1,42 @@
+# 分析产出
+output/*
+!output/.gitkeep
+
+# APK 和 DEX 文件
+*.apk
+*.dex
+*.so
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# 依赖目录
+deps/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frida dump 产出
+frida-dump/
+*.dump
+
+# 由 setup.sh 从 .mcp.json.template 生成的配置（含本机绝对路径）
+.mcp.json

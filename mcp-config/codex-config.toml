@@ -1,0 +1,41 @@
+# Codex CLI MCP 配置参考
+# 文件位置: ~/.codex/config.toml
+# 文档: https://github.com/openai/codex
+
+# ========================================
+# MCP Server 配置
+# ========================================
+
+# Frida MCP Server
+# 功能: 动态 Hook、进程注入、运行时分析
+# 安装: pip install frida-mcp
+[[mcp_servers]]
+name = "frida"
+command = "frida-mcp"
+
+# jadx MCP Server
+# 功能: Java 反编译、源码搜索、交叉引用
+# 来源: github.com/zinja-coder/jadx-mcp-server
+[[mcp_servers]]
+name = "jadx"
+command = "python3"
+args = ["/absolute/path/to/deps/jadx-mcp-server/jadx_mcp_server.py"]
+
+# apktool MCP Server
+# 功能: Smali 反编译、资源分析、Manifest 解析
+# 来源: github.com/zinja-coder/apktool-mcp-server
+[[mcp_servers]]
+name = "apktool"
+command = "uv"
+args = [
+  "--directory",
+  "/absolute/path/to/deps/apktool-mcp-server",
+  "run",
+  "apktool_mcp_server.py"
+]
+
+# [可选] JSHook MCP Server (Web/JS 逆向)
+# [[mcp_servers]]
+# name = "jshook"
+# command = "node"
+# args = ["/path/to/jshookmcp/index.js"]
